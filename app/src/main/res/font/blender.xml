@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Regular -->
+    <font
+        android:font="@font/blender_pro_book"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_heavy"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_medium"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_thin"
+        android:fontStyle="normal"
+        android:fontWeight="400" />
+
+    <!-- Bold -->
+    <font
+        android:font="@font/blender_pro_bold"
+        android:fontStyle="normal"
+        android:fontWeight="700" />
+
+    <!-- Italic -->
+    <font
+        android:font="@font/blender_pro_book_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_bold_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_medium_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+    <font
+        android:font="@font/blender_pro_thin_italic"
+        android:fontStyle="italic"
+        android:fontWeight="400" />
+</font-family>
