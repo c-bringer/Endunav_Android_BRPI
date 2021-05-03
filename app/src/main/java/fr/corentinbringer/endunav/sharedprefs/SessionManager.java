@@ -1,4 +1,4 @@
-package fr.corentinbringer.endunav;
+package fr.corentinbringer.endunav.sharedprefs;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
@@ -8,7 +8,7 @@ import com.auth0.android.jwt.JWT;
 
 import java.util.HashMap;
 
-class SessionManager
+public class SessionManager
 {
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;

@@ -1,4 +1,4 @@
-package fr.corentinbringer.endunav;
+package fr.corentinbringer.endunav.views;
 
 import android.graphics.BitmapFactory;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
 
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -39,7 +40,9 @@ import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 import java.util.List;
 
+import fr.corentinbringer.endunav.R;
 import fr.corentinbringer.endunav.databinding.FragmentMapBinding;
+import fr.corentinbringer.endunav.sharedprefs.SessionManager;
 import retrofit2.Call;
 import retrofit2.Response;
 import retrofit2.Callback;
@@ -60,7 +63,9 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
     private NavigationMapRoute navigationMapRoute;
     private Button button;
 
+    SessionManager sessionManager;
     private FragmentMapBinding b;
+    private NavController navController;
 
     @Override
     public void onCreate(@Nullable Bundle savedInstanceState)
@@ -259,6 +264,15 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
     {
         super.onResume();
         mapView.onResume();
+
+        //Check if user is signed
+        try {
+            if (sessionManager.checkLogin()) {
+                //navController.navigate(R.id.action_addPicturesStolenMotorcyclesFragment_to_loginFragment);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
 
