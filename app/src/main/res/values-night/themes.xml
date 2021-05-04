@@ -3,7 +3,7 @@
     <style name="Theme.Endunav" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <!-- Brand color. -->
         <item name="colorPrimary">@color/orange</item>
-        <item name="colorPrimaryVariant">@color/blue</item>
+        <item name="colorPrimaryVariant">@color/black</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>

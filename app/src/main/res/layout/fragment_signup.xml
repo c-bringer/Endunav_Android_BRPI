@@ -35,11 +35,96 @@
             android:id="@+id/white_background"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:padding="50dp"
             android:background="@drawable/background_white"
             mapbox:layout_constraintBottom_toBottomOf="parent"
             mapbox:layout_constraintEnd_toEndOf="parent"
             mapbox:layout_constraintStart_toStartOf="parent"
             mapbox:layout_constraintTop_toBottomOf="@id/orange_background">
+
+            <TextView
+                android:id="@+id/label_signup_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/label_signup_title"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextPersonName"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/placeholder_name"
+                android:background="@drawable/edittext_border"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:ems="10"
+                android:inputType="textPersonName"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/label_signup_title" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/placeholder_email_address"
+                android:background="@drawable/edittext_border"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/editTextTextPersonName" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:hint="@string/placeholder_password"
+                android:background="@drawable/edittext_border"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:ems="10"
+                android:inputType="textPassword"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+            <Button
+                android:id="@+id/button_signup"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_signup_button"
+                android:background="@drawable/button_orange"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+            <TextView
+                android:id="@+id/label_signup_have_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:gravity="center"
+                android:text="@string/label_signup_have_account"
+                android:textSize="15sp"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/button_signup"
+                mapbox:layout_constraintVertical_bias="1.0"
+                android:focusable="true"
+                android:clickable="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>

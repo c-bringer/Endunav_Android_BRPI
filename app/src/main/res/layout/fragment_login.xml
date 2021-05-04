@@ -35,11 +35,96 @@
             android:id="@+id/white_background"
             android:layout_width="match_parent"
             android:layout_height="0dp"
+            android:padding="50dp"
             android:background="@drawable/background_white"
             mapbox:layout_constraintBottom_toBottomOf="parent"
             mapbox:layout_constraintEnd_toEndOf="parent"
             mapbox:layout_constraintStart_toStartOf="parent"
             mapbox:layout_constraintTop_toBottomOf="@id/orange_background">
+
+            <TextView
+                android:id="@+id/label_login_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:gravity="center"
+                android:textSize="20sp"
+                android:text="@string/label_login_title"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toTopOf="parent" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="15dp"
+                android:layout_marginTop="20dp"
+                android:hint="@string/placeholder_email_address"
+                android:background="@drawable/edittext_border"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:ems="10"
+                android:inputType="textEmailAddress"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/label_login_title" />
+
+            <EditText
+                android:id="@+id/editTextTextPassword"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:padding="15dp"
+                android:hint="@string/placeholder_password"
+                android:background="@drawable/edittext_border"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:ems="10"
+                android:inputType="textPassword"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/editTextTextEmailAddress" />
+
+            <TextView
+                android:id="@+id/label_login_forget_password"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:gravity="end"
+                android:text="@string/label_login_forget_password"
+                android:textSize="12sp"
+                android:focusable="true"
+                android:clickable="true"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/editTextTextPassword" />
+
+            <Button
+                android:id="@+id/button_login"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:text="@string/label_login_button"
+                android:background="@drawable/button_orange"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/label_login_forget_password" />
+
+            <TextView
+                android:id="@+id/label_login_dont_have_account"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/blender_pro_heavy"
+                android:gravity="center"
+                android:text="@string/label_login_dont_have_account"
+                android:textSize="15sp"
+                mapbox:layout_constraintBottom_toBottomOf="parent"
+                mapbox:layout_constraintEnd_toEndOf="parent"
+                mapbox:layout_constraintStart_toStartOf="parent"
+                mapbox:layout_constraintTop_toBottomOf="@+id/button_login"
+                mapbox:layout_constraintVertical_bias="1.0"
+                android:focusable="true"
+                android:clickable="true" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.constraintlayout.widget.ConstraintLayout>
