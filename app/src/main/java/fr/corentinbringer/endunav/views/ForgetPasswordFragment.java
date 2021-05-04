@@ -50,6 +50,7 @@ public class ForgetPasswordFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
+        sessionManager = new SessionManager(getContext());
 
         //Redirection vers LoginFragment
         b.labelForgetPasswordHavePassword.setOnClickListener(v -> navController.navigate(R.id.action_forgetPasswordFragment_to_loginFragment));

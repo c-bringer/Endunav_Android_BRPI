@@ -9,7 +9,11 @@
         android:id="@+id/mapFragment"
         android:name="fr.corentinbringer.endunav.views.MapFragment"
         android:label="@string/map_fragment_label"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map" >
+        <action
+            android:id="@+id/action_mapFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
     <fragment
         android:id="@+id/loginFragment"
         android:name="fr.corentinbringer.endunav.views.LoginFragment"

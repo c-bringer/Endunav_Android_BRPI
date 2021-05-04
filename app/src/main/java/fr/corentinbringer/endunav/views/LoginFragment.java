@@ -50,6 +50,7 @@ public class LoginFragment extends Fragment
     {
         super.onViewCreated(view, savedInstanceState);
         navController = Navigation.findNavController(view);
+        sessionManager = new SessionManager(getContext());
 
         //Redirection vers SignupFragment
         b.labelLoginDontHaveAccount.setOnClickListener(v -> navController.navigate(R.id.action_loginFragment_to_signupFragment));

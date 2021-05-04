@@ -87,6 +87,7 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        sessionManager = new SessionManager(getContext());
 
         mapView = b.mapView;
         mapView.onCreate(savedInstanceState);
@@ -268,7 +269,7 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
         //Check if user is signed
         try {
             if (sessionManager.checkLogin()) {
-                //navController.navigate(R.id.action_addPicturesStolenMotorcyclesFragment_to_loginFragment);
+                navController.navigate(R.id.action_mapFragment_to_loginFragment);
             }
         } catch (Exception e) {
             e.printStackTrace();
