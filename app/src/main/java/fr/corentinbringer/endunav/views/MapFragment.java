@@ -8,12 +8,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import com.mapbox.android.core.permissions.PermissionsListener;
 import com.mapbox.android.core.permissions.PermissionsManager;
@@ -40,7 +42,9 @@ import com.mapbox.services.android.navigation.ui.v5.NavigationLauncher;
 import com.mapbox.services.android.navigation.v5.navigation.NavigationRoute;
 import java.util.List;
 
+import fr.corentinbringer.endunav.MainActivity;
 import fr.corentinbringer.endunav.R;
+import fr.corentinbringer.endunav.databinding.ActivityMainBinding;
 import fr.corentinbringer.endunav.databinding.FragmentMapBinding;
 import fr.corentinbringer.endunav.sharedprefs.SessionManager;
 import retrofit2.Call;
@@ -80,6 +84,19 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
     {
         b = DataBindingUtil.inflate(inflater, R.layout.fragment_map, container, false);
 
+        //Affiche BottomNavigationView
+        MainActivity mainActivity = (MainActivity) getActivity();
+        ActivityMainBinding ab = mainActivity.getActivityBinding();
+        ab.bottomNavigation.setVisibility(View.VISIBLE);
+
+        //Configure BottomNavigationView et affiche ActionBar
+        mainActivity.configureBottomNavigation();
+        mainActivity.setActionBar(R.string.label_menu_map);
+
+        //Toolbar toolbar = ab.toolbar;
+        //mainActivity.setSupportActionBar(toolbar);
+        //mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         return b.getRoot();
     }
 
@@ -87,6 +104,7 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
+        navController = Navigation.findNavController(view);
         sessionManager = new SessionManager(getContext());
 
         mapView = b.mapView;
@@ -99,6 +117,8 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
                 mapboxMap.addOnMapClickListener(MapFragment.this);
 
                 button = b.startButton;
+                button.setEnabled(false);
+
                 button.setOnClickListener(v -> {
                     boolean simulateRoute = true;
                     NavigationLauncherOptions options = NavigationLauncherOptions.builder()

@@ -52,6 +52,7 @@ public class SignupFragment extends Fragment
         MainActivity mainActivity = (MainActivity) getActivity();
         ActivityMainBinding ab = mainActivity.getActivityBinding();
         ab.toolbar.setVisibility(View.GONE);
+        ab.bottomNavigation.setVisibility(View.GONE);
 
         return b.getRoot();
     }
@@ -60,7 +61,6 @@ public class SignupFragment extends Fragment
     public void onViewCreated(@NonNull View view, Bundle savedInstanceState)
     {
         super.onViewCreated(view, savedInstanceState);
-
         navController = Navigation.findNavController(view);
         sessionManager = new SessionManager(getContext());
 

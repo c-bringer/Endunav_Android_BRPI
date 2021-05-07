@@ -41,6 +41,7 @@ public class ForgetPasswordFragment extends Fragment
         MainActivity mainActivity = (MainActivity) getActivity();
         ActivityMainBinding ab = mainActivity.getActivityBinding();
         ab.toolbar.setVisibility(View.GONE);
+        ab.bottomNavigation.setVisibility(View.GONE);
 
         return b.getRoot();
     }

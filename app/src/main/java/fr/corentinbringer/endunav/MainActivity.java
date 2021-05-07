@@ -3,26 +3,25 @@ package fr.corentinbringer.endunav;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
-import android.view.Menu;
-import android.view.MenuItem;
+import android.view.View;
 
 import fr.corentinbringer.endunav.databinding.ActivityMainBinding;
 
 public class MainActivity extends AppCompatActivity
 {
     private ActivityMainBinding b;
-    private Toolbar toolbar;
+    private NavController navController;
 
     @Override
     protected void onCreate(Bundle savedInstanceState)
     {
         super.onCreate(savedInstanceState);
         b = DataBindingUtil.setContentView(this, R.layout.activity_main);
-        toolbar = b.toolbar;
-        setSupportActionBar(toolbar);
+        navController = Navigation.findNavController(this, R.id.nav_host_fragment);
     }
 
 
@@ -32,29 +31,37 @@ public class MainActivity extends AppCompatActivity
     }
 
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu)
+    public void configureBottomNavigation()
     {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+        b.bottomNavigation.setOnNavigationItemSelectedListener(item -> {
+            boolean result = false;
+
+            switch(item.getItemId()) {
+                case R.id.map_tab:
+                    navController.navigate(R.id.mapFragment);
+                    result = true;
+                    break;
+                case R.id.settings_tab:
+                    navController.navigate(R.id.settingsFragment);
+                    result = true;
+                    break;
+            }
+
+            return result;
+        });
     }
 
 
     @Override
-    public boolean onOptionsItemSelected(MenuItem item)
+    public void onBackPressed()
     {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
+        super.onBackPressed();
+    }
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings)
-        {
-            return true;
-        }
 
-        return super.onOptionsItemSelected(item);
+    public void setActionBar(Integer heading)
+    {
+        b.toolbar.setVisibility(View.VISIBLE);
+        b.toolbar.setTitle(heading);
     }
 }
