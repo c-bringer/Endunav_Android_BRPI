@@ -39,10 +39,17 @@ repositories {
 }
 
 dependencies {
+    //Mapbox
     implementation 'com.mapbox.mapboxsdk:mapbox-android-sdk:9.6.1'
-    //implementation "com.mapbox.navigation:ui:1.5.0"
     implementation 'com.mapbox.mapboxsdk:mapbox-android-navigation-ui:0.42.6'
+    //JWT
     implementation 'com.auth0.android:jwtdecode:2.0.0'
+    //Lifecycle components
+    implementation "android.arch.lifecycle:extensions:2.3.0"
+    annotationProcessor "android.arch.lifecycle:compiler:2.3.0"
+    //Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
 
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
