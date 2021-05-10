@@ -8,10 +8,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.Toast;
-import android.widget.Toolbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -93,9 +93,9 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
         mainActivity.configureBottomNavigation();
         mainActivity.setActionBar(R.string.label_menu_map);
 
-        //Toolbar toolbar = ab.toolbar;
-        //mainActivity.setSupportActionBar(toolbar);
-        //mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+        Toolbar toolbar = ab.toolbar;
+        mainActivity.setSupportActionBar(toolbar);
+        mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
 
         return b.getRoot();
     }
@@ -165,7 +165,7 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
         getRoute(originPoint, destinationPoint);
 
         button.setEnabled(true);
-        button.setBackgroundResource(R.color.orange);
+        button.setBackgroundResource(R.drawable.button_orange);
 
         return true;
     }
@@ -229,9 +229,6 @@ public class MapFragment extends Fragment implements MapboxMap.OnMapClickListene
             //Center camera
             double latitude = mapboxMap.getLocationComponent().getLastKnownLocation().getLatitude();
             double longitude = mapboxMap.getLocationComponent().getLastKnownLocation().getLongitude();
-
-            //double latitude = 44.07017678895298;
-            //double longitude = 3.058430097282878;
 
             CameraPosition position = new CameraPosition.Builder()
                     .target(new LatLng(latitude, longitude))

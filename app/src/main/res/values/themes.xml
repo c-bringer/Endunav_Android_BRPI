@@ -7,7 +7,20 @@
         <item name="colorOnPrimary">@color/white</item>
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
-        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="NavigationMapRoute">
+        <item name="routeColor">@color/orange</item>
+        <item name="routeModerateCongestionColor">@color/black</item>
+        <item name="routeSevereCongestionColor">@color/orange</item>
+        <item name="routeShieldColor">@color/black</item>
+        <item name="routeScale">1.0</item>
+    </style>
+
+    <style name="NavigationView" parent="Theme.AppCompat.NoActionBar">
+        <item name="navigationViewPrimary">@color/orange</item>
+        <item name="navigationViewSecondary">@color/black</item>
+        <item name="navigationViewAccent">@color/white</item>
     </style>
 
     <style name="Theme.Endunav.NoActionBar">

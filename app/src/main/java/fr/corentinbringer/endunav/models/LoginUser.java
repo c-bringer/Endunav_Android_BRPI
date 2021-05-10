@@ -2,22 +2,15 @@ package fr.corentinbringer.endunav.models;
 
 import android.util.Patterns;
 
-public class SignupUser
+public class LoginUser
 {
-    private String strCompleteName;
     private String strEmailAddress;
     private String strPassword;
 
-    public SignupUser(String completeName, String emailAddress, String password)
+    public LoginUser(String emailAddress, String password)
     {
-        strCompleteName = completeName;
         strEmailAddress = emailAddress;
         strPassword = password;
-    }
-
-    public String getStrCompleteName()
-    {
-        return strCompleteName;
     }
 
 
@@ -42,11 +35,5 @@ public class SignupUser
     public boolean isPasswordLengthGreaterThan8()
     {
         return getStrPassword().length() >= 8;
-    }
-
-
-    public boolean isCompleteNameLengthGreaterThan2()
-    {
-        return getStrCompleteName().length() >= 2;
     }
 }

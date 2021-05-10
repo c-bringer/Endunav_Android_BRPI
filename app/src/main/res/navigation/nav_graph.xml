@@ -3,12 +3,12 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/mapFragment">
+    app:startDestination="@id/loginFragment">
 
     <fragment
         android:id="@+id/mapFragment"
         android:name="fr.corentinbringer.endunav.views.MapFragment"
-        android:label="@string/map_fragment_label"
+        android:label="MapFragment"
         tools:layout="@layout/fragment_map" >
         <action
             android:id="@+id/action_mapFragment_to_loginFragment"
@@ -60,6 +60,18 @@
         tools:layout="@layout/fragment_settings">
         <action
             android:id="@+id/action_settingsFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_settingsFragment_to_updateAccountDetailsFragment"
+            app:destination="@id/updateAccountDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/updateAccountDetailsFragment"
+        android:name="fr.corentinbringer.endunav.views.UpdateAccountDetailsFragment"
+        android:label="fragment_update_account_details"
+        tools:layout="@layout/fragment_update_account_details" >
+        <action
+            android:id="@+id/action_updateAccountDetailsFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
     </fragment>
 </navigation>

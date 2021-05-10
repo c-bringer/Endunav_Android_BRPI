@@ -3,12 +3,24 @@
 
     <string name="label_menu_map">Navigation</string>
     <string name="label_menu_settings">Paramètres</string>
+    <string name="label_menu_account_details">Mon compte</string>
 
-    <string name="map_fragment_label">Carte</string>
-    <string name="label_error">Erreur</string>
     <string name="label_disconnected">Déconnecté</string>
-    <string name="label_invitation">Rejoins moi sur Endunav, l\'application de navigation pour l\'enduro ! https://endunav.corentinbringer.fr/openapp/</string>
-    <string name="label_inviation_copying">Invitation copiée dans votre presse-papier</string>
+    <string name="label_connected">Connecté</string>
+    <string name="label_unauthorized">Vous n\'avez pas accès aux informations du compte</string>
+
+    <string name="label_error">Erreur</string>
+    <string name="label_error_email">Veuillez entrer une adresse mail</string>
+    <string name="label_error_email_valid">Veuillez entrer une adresse mail valide</string>
+    <string name="label_error_password_length">Veuillez entrer un mot de passe avec au moins 8 caractères</string>
+    <string name="label_error_intput_incomplete">Tous les champs doivent être complétés</string>
+    <string name="label_error_name">Veuillez entrer un nom</string>
+    <string name="label_error_name_length">Veuillez entrer un nom avec au moins 2 caractères</string>
+    <string name="label_error_password">Veuillez entrer un mot de passe</string>
+    <string name="label_error_email_already_used">Cette adresse mail est déjà utilisée</string>
+    <string name="label_error_account_disabled">Ce compte est désactivé</string>
+    <string name="label_error_wrong_password">Mauvais mot de passe</string>
+    <string name="label_error_no_account">Aucun compte existant à cette adresse mail</string>
 
     <string name="label_login_title">Connexion à votre compte</string>
     <string name="label_login_button">Connexion</string>
@@ -18,14 +30,6 @@
     <string name="label_signup_title">Créer un compte</string>
     <string name="label_signup_button">Inscription</string>
     <string name="label_signup_have_account">Vous avez un compte ? Se connecter</string>
-    <string name="label_signup_error_name">Veuillez entrer un nom</string>
-    <string name="label_signup_error_name_length">Veuillez entrer un nom avec au moins 2 caractères</string>
-    <string name="label_signup_error_email">Veuillez entrer une adresse mail</string>
-    <string name="label_signup_error_email_valid">Veuillez entrer une adresse mail valide</string>
-    <string name="label_signup_error_password">Veuillez entrer un mot de passe</string>
-    <string name="label_signup_error_password_length">Veuillez entrer un mot de passe avec au moins 8 caractères</string>
-    <string name="label_signup_error_intpus_incomplete">Tous les champs doivent être complétés</string>
-    <string name="label_signup_error_email_already_used">Cette adresse mail est déjà utilisée</string>
     <string name="label_signup_account_created">Votre compte à été crée avec succès</string>
 
     <string name="label_forget_password_title">Récupération du mot de passe</string>
@@ -37,6 +41,12 @@
         <item>Inviter des amis</item>
         <item>Déconnexion</item>
     </string-array>
+
+    <string name="label_update_account_button">Modifier mes informations</string>
+    <string name="label_update_account_button_delete">Supprimer mon compte</string>
+
+    <string name="label_invitation">Rejoins moi sur Endunav, l\'application de navigation pour l\'enduro ! https://endunav.corentinbringer.fr/openapp/</string>
+    <string name="label_inviation_copying">Invitation copiée dans votre presse-papier</string>
 
     <string name="placeholder_name">Nom complet</string>
     <string name="placeholder_email_address">Adresse mail</string>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.navigation.NavController;
@@ -52,6 +53,10 @@ public class SettingsFragment extends Fragment
         mainActivity.configureBottomNavigation();
         mainActivity.setActionBar(R.string.label_menu_settings);
 
+        Toolbar toolbar = ab.toolbar;
+        mainActivity.setSupportActionBar(toolbar);
+        mainActivity.getSupportActionBar().setDisplayHomeAsUpEnabled(false);
+
         return b.getRoot();
     }
 
@@ -69,7 +74,7 @@ public class SettingsFragment extends Fragment
         b.settingsList.setOnItemClickListener(((parent, view1, position, id) -> {
             switch(position) {
                 case 0:
-                    //Redirection vers modifier les infos
+                    navController.navigate(R.id.action_settingsFragment_to_updateAccountDetailsFragment);
                     break;
                 case 1:
                     //Copier un lien d'invitation dans le presse papier
@@ -97,7 +102,7 @@ public class SettingsFragment extends Fragment
         super.onResume();
         //Check if user is signed
         try {
-            if (!sessionManager.checkLogin()) {
+            if (sessionManager.checkLogin()) {
                 navController.navigate(R.id.action_settingsFragment_to_loginFragment);
             }
         } catch (Exception e) {
