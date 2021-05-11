@@ -41,6 +41,13 @@ public class SessionManager
         editor.commit();
     }
 
+    //Update login session
+    public void updateEmail(String email)
+    {
+        editor.putString(KEY_EMAIL, email);
+        editor.commit();
+    }
+
 
     //Check login session
     public boolean checkLogin() throws Exception
@@ -73,6 +80,11 @@ public class SessionManager
         user.put(KEY_EMAIL, sharedPreferences.getString(KEY_EMAIL, null));
 
         return user;
+    }
+
+    public String getKeyEmail()
+    {
+        return sharedPreferences.getString(KEY_EMAIL, null);
     }
 
 

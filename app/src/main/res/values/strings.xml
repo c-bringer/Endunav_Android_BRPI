@@ -8,6 +8,8 @@
     <string name="label_disconnected">Déconnecté</string>
     <string name="label_connected">Connecté</string>
     <string name="label_unauthorized">Vous n\'avez pas accès aux informations du compte</string>
+    <string name="label_delete_account">Compte supprimé</string>
+    <string name="label_do_you_want_to_delete_your_account">Voulez-vous vraiment supprimer votre compte ?</string>
 
     <string name="label_error">Erreur</string>
     <string name="label_error_email">Veuillez entrer une adresse mail</string>
@@ -35,6 +37,7 @@
     <string name="label_forget_password_title">Récupération du mot de passe</string>
     <string name="label_forget_password_button">Renvoyer le mot de passe</string>
     <string name="label_forget_password_have_password">Vous avez retrouvé votre mot de passe ? Connexion</string>
+    <string name="label_forget_password_new_password_send">Un nouveau mot de passe vous à été envoyé par mail</string>
 
     <string-array name="array_label_settings">
         <item>Mon compte</item>
@@ -44,6 +47,7 @@
 
     <string name="label_update_account_button">Modifier mes informations</string>
     <string name="label_update_account_button_delete">Supprimer mon compte</string>
+    <string name="label_update_account_update_success">Vos informations ont été mises à jours.</string>
 
     <string name="label_invitation">Rejoins moi sur Endunav, l\'application de navigation pour l\'enduro ! https://endunav.corentinbringer.fr/openapp/</string>
     <string name="label_inviation_copying">Invitation copiée dans votre presse-papier</string>
